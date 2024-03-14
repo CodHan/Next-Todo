@@ -22,24 +22,3 @@ const reportPage = async () => {
 };
 
 export default reportPage;
-
-// 'use client';
-// import React, { useEffect } from 'react';
-
-// const reportPage = () => {
-//   useEffect(() => {
-//     const data = async () => {
-//       const req = await fetch('http://localhost:3000/api/todos', {
-//         method: 'GET',
-//       });
-//       const res = await req.json();
-//       console.log(res.todos);
-//       const data = res.todos;
-//     };
-//     data();
-//   }, []);
-
-//   return <div>reportPage</div>;
-// };
-
-// export default reportPage;
