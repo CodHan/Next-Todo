@@ -1,12 +1,6 @@
 //서버 요청을 여기다 날리면 여기서 json서버에 맞게 또 날리고
 //그 값을 리턴 해준다.
 
-type params = {
-  params: {
-    id: string;
-  };
-};
-
 //GET요청
 export async function GET(request: Request) {
   const res = await fetch('http://localhost:4000/todos');
@@ -44,9 +38,8 @@ export async function POST(request: Request) {
 }
 
 //수정요청
-export async function PATCH(request: Request, { params }: params) {
-  const { id } = params;
-  const { isDone } = await request.json();
+export async function PATCH(request: Request) {
+  const { id, isDone } = await request.json();
 
   const res = await fetch(`http://localhost:4000/todos/${id}`, {
     method: 'PATCH',
@@ -62,8 +55,8 @@ export async function PATCH(request: Request, { params }: params) {
 }
 
 //삭제요청
-export async function DELETE(request: Request, { params }: params) {
-  const { id } = params;
+export async function DELETE(request: Request) {
+  const { id } = await request.json();
 
   await fetch(`http://localhost:4000/todos/${id}`, {
     method: 'DELETE',
