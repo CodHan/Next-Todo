@@ -2,7 +2,7 @@
   "companyInfo": {
     "name": "주식회사 팀스파르타",
     "desctiption": "우리회사에 대한 설명입니다. blablabla~~~~~~",
-    "image": "http://~~~~"
+    "image": "https://assets-global.website-files.com/60a3629e04f26d12caff56df/61839f35fdad1729c76fdc97_01.jpg"
   },
   "todos": [
     {
@@ -15,7 +15,7 @@
       "id": "6357",
       "title": "노래 부르기",
       "contents": "커피 먹고싶어요",
-      "isDone": false
+      "isDone": true
     }
   ]
 }
