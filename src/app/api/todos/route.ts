@@ -2,7 +2,7 @@
 //그 값을 리턴 해준다.
 
 //GET요청
-export async function GET(request: Request) {
+export async function GET() {
   const res = await fetch('http://localhost:4000/todos');
   const todos = await res.json();
 

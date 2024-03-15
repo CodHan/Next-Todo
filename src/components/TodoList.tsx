@@ -2,11 +2,13 @@
 import React from 'react';
 import Working from './Working';
 import Done from './Done';
+import Input from './Input';
 
 const TodoList = () => {
   return (
     <>
       <div>
+        <Input />
         <div className="text-[40px] ml-10">Working...</div>
         <Working />
       </div>

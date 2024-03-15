@@ -1,11 +1,13 @@
 'use client';
 import { addTodo } from '@/mutateFn';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 import React, { ChangeEvent, useState } from 'react';
 
 const Input = () => {
   const [title, setTitle] = useState('');
   const [contents, setcontents] = useState('');
+  const router = useRouter();
 
   const queryClient = useQueryClient();
 
@@ -31,6 +33,10 @@ const Input = () => {
     addMutate.mutate(newTodo);
   };
 
+  const handRouter = () => {
+    router.push('/report');
+  };
+
   return (
     <div>
       <div className="mt-5 flex justify-center">
@@ -53,7 +59,12 @@ const Input = () => {
       </div>
       <div className="flex justify-center mt-5 ml-8">
         <button className="btn btn-wide" onClick={handSubmit}>
-          확인
+          입력
+        </button>
+      </div>
+      <div className="flex justify-center mt-5 ml-8">
+        <button className="btn glass " onClick={handRouter}>
+          통계 보러 가기
         </button>
       </div>
     </div>
