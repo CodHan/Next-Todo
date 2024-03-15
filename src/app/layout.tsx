@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import QueryProvider from './provider';
+import NavBar from '@/components/layout/NavBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,33 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <QueryProvider>
-          <div className="flex">
-            <div className="navbar bg-base-300 ">
-              <Link href={'/'} className="btn btn-ghost text-xl ">
-                Home
-              </Link>
-            </div>
-            <div className="navbar bg-base-300 justify-center text-[25px]">
-              <h1 className="underline font-bold">Next.JS Todo</h1>
-            </div>
-            <div className="navbar bg-base-300 justify-end">
-              <Link href={'/about'} className="btn btn-ghost text-xl">
-                About
-              </Link>
-              <Link href={'/report'} className="btn btn-ghost text-xl">
-                Report
-              </Link>
-              <Link href={'/todos-csr'} className="btn btn-ghost text-xl">
-                Todos-csr
-              </Link>
-              <Link href={'/todos-ssr'} className="btn btn-ghost text-xl">
-                Todos-ssr
-              </Link>
-            </div>
-          </div>
-          {children}
-        </QueryProvider>
+        <NavBar />
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );
