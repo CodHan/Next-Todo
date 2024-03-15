@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 
-const AboutPage = async () => {
-  const req = await fetch('http://localhost:3000/api/company', {
-    method: 'GET',
-  });
-  const res = await req.json();
-  const data = res.data;
-  const { name, desctiption, image } = data;
+import api from '@/api';
 
+const AboutPage = async () => {
+  const req = await api.get('/company');
+  const res = req.data;
+  const { name, desctiption, image } = res;
+  console.log(res);
   return (
     <div>
       <div>회사명: {name}</div>
@@ -20,5 +19,3 @@ const AboutPage = async () => {
 };
 
 export default AboutPage;
-
-//이미지 불러오는거 오류
