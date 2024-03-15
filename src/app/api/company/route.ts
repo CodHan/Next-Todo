@@ -2,6 +2,7 @@
 //그 값을 리턴 해준다.
 
 import axios from 'axios';
+
 export async function GET() {
   try {
     const res = await axios.get('http://localhost:4000/companyInfo');
