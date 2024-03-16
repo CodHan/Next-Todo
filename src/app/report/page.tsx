@@ -9,7 +9,7 @@ const reportPage = async () => {
     },
   });
   const res = await req.json();
-  const data: Todo[] = res.todos;
+  const data: Todo[] = res;
   const workingTodo: Todo[] = data.filter((item) => item.isDone === false);
   const doneTodo: Todo[] = data.filter((item) => item.isDone === true);
 

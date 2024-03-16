@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const SERVER_URL = 'http://localhost:4000/todos';
 //GET요청
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const res = await axios.get(SERVER_URL);
     const todos = await res.data;

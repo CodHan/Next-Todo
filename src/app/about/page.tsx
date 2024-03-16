@@ -12,7 +12,7 @@ const AboutPage = async () => {
       <div>회사명: {name}</div>
       <div>설명: {desctiption}</div>
       <div>회사 전경</div>
-      {/* <Image src={image} alt="회사이미지" /> */}
+      <Image src={image} alt="회사이미지" width={500} height={500} />
     </div>
   );
 };
