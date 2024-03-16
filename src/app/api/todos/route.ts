@@ -22,8 +22,6 @@ export async function GET(request: Request) {
 }
 
 //추가요청
-// payload형태로 받으면 안됨, request로 받아서 json으로 꼭 바꿔야 하는지
-// request의 형태가 뭔지 궁금함.
 export async function POST(request: Request) {
   try {
     const { title, contents }: { title: string; contents: string } =

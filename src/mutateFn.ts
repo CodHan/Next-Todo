@@ -32,13 +32,13 @@ export const deleteTodo = async (payload: { id: string }) => {
     },
     body: JSON.stringify(payload),
   });
+  // await api.delete('todos',payload)
+  //delete의 body로 payload를 보내야하는데 안됨
 };
 export const updateTodo = async (payload: Todo) => {
-  await fetch('http://localhost:3000/api/todos/', {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
+  try {
+    await api.patch('todos', payload);
+  } catch (error) {
+    console.error(error);
+  }
 };
