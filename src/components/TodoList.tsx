@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import Working from './Working';
 import Done from './Done';
