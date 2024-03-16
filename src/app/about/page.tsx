@@ -3,7 +3,7 @@ import React from 'react';
 import api from '@/api';
 
 const AboutPage = async () => {
-  const req = await api.get('/company');
+  const req = await api.get('company');
   const res = req.data;
   const { name, desctiption, image } = res;
 
