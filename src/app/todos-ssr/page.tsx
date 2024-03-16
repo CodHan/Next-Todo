@@ -2,7 +2,7 @@ import { Todo } from '@/types/type';
 import axios from 'axios';
 import Link from 'next/link';
 import React from 'react';
-import api from '@/api';
+import api from '@/axios.api';
 
 const ssrTodoPage = async () => {
   const req = await api.get('todos');

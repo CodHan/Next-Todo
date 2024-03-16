@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link';
 import QueryProvider from './provider';
 import NavBar from '@/components/layout/NavBar';
 
@@ -26,5 +25,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-//프로바이더 감싸는데 children만 감싸면 안되는건지

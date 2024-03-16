@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import api from '@/api';
+import api from '@/axios.api';
 
 const AboutPage = async () => {
   const req = await api.get('company');

@@ -1,9 +1,10 @@
 //서버 요청을 여기다 날리면 여기서 json서버에 맞게 또 날리고
-//그 값을 리턴 해준다.
+//그 값을 리턴 해줌.
 
 import axios from 'axios';
 
 const SERVER_URL = 'http://localhost:4000/todos';
+
 //GET요청
 export async function GET(request: Request) {
   try {
@@ -60,9 +61,3 @@ export async function DELETE(request: Request) {
   await axios.delete(`${SERVER_URL}/${id}`);
   return new Response(null, { status: 204 });
 }
-//mutateFn으론 axios가 안되는건지,
-//axios가 delete요청이다보니 애초에 id값을 넣어서 요청 보내야 해서
-//오류가 남. DELETE요청을 axios로 할 순 없는건지
-
-//axios#get(url[, config]) get은 되는데 delete는 안됨
-//axios#delete(url[, config])

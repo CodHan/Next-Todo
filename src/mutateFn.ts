@@ -1,5 +1,5 @@
 import { Todo } from './types/type';
-import api from '@/api';
+import api from '@/axios.api';
 
 type payload = {
   title: string;
