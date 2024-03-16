@@ -1,15 +1,12 @@
 import { Todo } from '@/types/type';
+import axios from 'axios';
 import Link from 'next/link';
 import React from 'react';
+import api from '@/api';
 
 const ssrTodoPage = async () => {
-  const req = await fetch('http://localhost:3000/api/todos', {
-    method: 'GET',
-    cache: 'no-cache',
-  });
-  const res = await req.json();
-
-  const todos = res.todos;
+  const req = await api.get('todos');
+  const todos = req.data;
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import { Todo } from './types/type';
+import api from '@/api';
 
 type payload = {
   title: string;
@@ -6,21 +7,21 @@ type payload = {
 };
 
 export const getTodo = async () => {
-  const req = await fetch('http://localhost:3000/api/todos', {
-    method: 'GET',
-  });
-  const res = await req.json();
-  return res.todos;
+  try {
+    const req = await api.get('todos');
+    const res = await req.data;
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const addTodo = async (payload: payload) => {
-  await fetch('http://localhost:3000/api/todos', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
+  try {
+    await api.post('todos', payload);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const deleteTodo = async (payload: { id: string }) => {
